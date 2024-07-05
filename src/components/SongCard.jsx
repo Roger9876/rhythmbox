@@ -27,7 +27,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
       <div className="relative w-full h-56 group">
         <div className={`absolute inset-0 justify-center
         items-center bg-black bg-opacity-50 group-hover:flex
-        ${activeSong?.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'}`}
+        ${activeSong?.title === song?.attributes?.name ? 'flex bg-black bg-opacity-70' : 'hidden'}`}
         >
           <PlayPause
             isPlaying={isPlaying}
@@ -41,8 +41,8 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
       </div>
       <div className="mt4 flex flex-col">
         <p className="font-semibold text-lg text-white truncate">
-          <Link to={`/songs/${song?.key}`}>
-            {song.attributes?.name}
+          <Link to={`/songs/${song?.id}`}>
+            {song?.attributes?.name}
           </Link>
         </p>
         <p className="text-sm truncate text-gray-300 mt-1">
@@ -50,7 +50,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
             ? `/artists/${song?.relationships?.artists?.data[0].id}`
             : '/top-artists'}
           >
-            {song.attributes?.artistName}
+            {song?.attributes?.artistName}
           </Link>
         </p>
       </div>
