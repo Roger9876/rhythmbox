@@ -1,7 +1,7 @@
 import loader from './loader.svg';
-import logo from './logo.svg';
+import rhythmboxLogo from './rhythmboxLogo.svg';
 
 export {
-  logo,
   loader,
+  rhythmboxLogo,
 };
